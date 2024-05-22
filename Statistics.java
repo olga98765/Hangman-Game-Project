@@ -13,6 +13,15 @@ public int getGamesLost() {
 }
 
 
+public void incrementGamesWon() {
+    gamesWon++;
+}
+
+
+public void incrementGamesLost() {
+    gamesLost++;
+}
+
 public double getWinLossRatio() {
 
 double ratio = (double) gamesWon / (gamesWon + gamesLost) * 100;

@@ -11,7 +11,8 @@ public static void playGame() {
 String wordInGame = wordDatabase.getRandomWord();
 
 
-
+GameLogic game = new GameLogic(wordInGame, selectedDifficulty);
+        game.play();
 
 
 }
