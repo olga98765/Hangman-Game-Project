@@ -24,11 +24,13 @@ public String getRandomWord() {
 
 
 
-public void addWord() {
+public void addWord(String word) {
+    words.add(word);
 
 }
 
-public void removeWord() {
+public void removeWord(String word) {
+words.remove(word);
 
 }
 
@@ -37,9 +39,7 @@ public void editWord() {
 }
 
 
-public void showWords() {
 
-}
 
 
 }
