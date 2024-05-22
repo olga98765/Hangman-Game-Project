@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Options {
 
     private static Statistics stats = new Statistics();
@@ -52,6 +54,12 @@ public static void showWordDatabase() {
     System.out.println("Słowa w grze:");
 
     System.out.println(wordDatabase.getWords());
+
+    List<String> words = wordDatabase.getWords();
+    System.out.println(words);
+    for (int i = 0; i < words.size(); i++) {
+        System.out.println(i + " " + words.get(i));
+    }
 
 
 }
