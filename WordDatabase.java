@@ -39,7 +39,9 @@ public void editWord() {
 }
 
 
-
+public List<String> getWords() {
+    return new ArrayList<>(words);
+}
 
 
 }

@@ -6,8 +6,8 @@ public class Main {
 
         WordDatabase words = new WordDatabase();
         System.out.println(words.getRandomWord()); 
-        double ratio = Statistics.getWinLossRatio(10,5);
-System.out.println(ratio);
+        // double ratio = Statistics.getWinLossRatio(10,5);
+// System.out.println(ratio);
 
 Menu menu = new Menu();
 menu.displayMenu();

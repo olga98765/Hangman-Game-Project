@@ -1,15 +1,21 @@
 public class Statistics {
-// private int gamesWon = 10;
-// private int gamesLost = 5;
+private int gamesWon;
+private int gamesLost;
 
 
 
+public int getGamesWon() {
+    return gamesWon;
+}
+
+public int getGamesLost() {
+    return gamesLost;
+}
 
 
+public double getWinLossRatio() {
 
-public static double getWinLossRatio(double won, double lost) {
-
-double ratio = (double) won / (won + lost) * 100;
+double ratio = (double) gamesWon / (gamesWon + gamesLost) * 100;
 return Math.round(ratio);
 
 }
