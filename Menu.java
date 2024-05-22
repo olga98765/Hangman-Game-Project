@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Menu {
 
@@ -9,36 +8,33 @@ System.out.println("\nWybierz opcję\n\n1.Graj\n2. Dodaj słowo\n3. Usuń słowo
 
 String option = InputHelper.readLine();
 
+
+
+
 switch (option) {
     case "1":
 
-    System.out.println("1");
-        // playGame();
+        Options.playGame();
         break;
     case "2":
-    System.out.println("2");
 
-        // addWord();
+        Options.addWord();
         break;
     case "3":
-    System.out.println("3");
 
-        // removeWord();
+        Options.removeWord();
         break;
     case "4":
-    System.out.println("4");
 
-        // editWordByNumber();
+        Options.editWordByNumber();
         break;
     case "5":
-    System.out.println("5");
 
-        // showStatistics();
+        Options.showStatistics();
         break;
     case "6":
-    System.out.println("6");
 
-        // showWordDatabase();
+        Options.showWordDatabase();
         break;
     case "7":
     System.out.println("7");
