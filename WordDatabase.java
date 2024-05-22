@@ -34,7 +34,9 @@ words.remove(word);
 
 }
 
-public void editWord() {
+public void setWord(int number, String newWord) {
+
+words.set(number, newWord);
 
 }
 
