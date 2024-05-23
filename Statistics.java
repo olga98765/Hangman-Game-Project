@@ -1,37 +1,28 @@
 public class Statistics {
-private int gamesWon;
-private int gamesLost;
+    private int gamesWon = 0;
+    private int gamesLost = 0;
 
+    public int getGamesWon() {
+        return gamesWon;
+    }
 
+    public int getGamesLost() {
+        return gamesLost;
+    }
 
-public int getGamesWon() {
-    return gamesWon;
-}
+    public void incrementGamesWon() {
+        gamesWon++;
+    }
 
-public int getGamesLost() {
-    return gamesLost;
-}
+    public void incrementGamesLost() {
+        gamesLost++;
+    }
 
+    public double getWinLossRatio() {
 
-public void incrementGamesWon() {
-    gamesWon++;
-}
+        double ratio = (double) gamesWon / (gamesWon + gamesLost) * 100;
+        return Math.round(ratio);
 
-
-public void incrementGamesLost() {
-    gamesLost++;
-}
-
-public double getWinLossRatio() {
-
-double ratio = (double) gamesWon / (gamesWon + gamesLost) * 100;
-return Math.round(ratio);
-
-}
-
-
-
-
-
+    }
 
 }

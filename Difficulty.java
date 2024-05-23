@@ -6,11 +6,11 @@ public class Difficulty {
             case "1":
                 return word.length() + 10;
             case "2":
-                return word.length() + 8;
-            case "3":
                 return word.length() + 5;
+            case "3":
+                return word.length();
             default:
-                return  word.length() + 8;
+                return  word.length() + 5;
         }
 
     }
