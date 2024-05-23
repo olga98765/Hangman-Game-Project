@@ -6,6 +6,8 @@ public class Options {
     private static WordDatabase wordDatabase = new WordDatabase();
 
     public static void playGame() {
+
+        
         System.out.println("Wybierz poziom trudności (1. łatwy, 2. średni, 3. trudny):");
         String selectedDifficulty = InputHelper.readLine();
         String wordInGame = wordDatabase.getRandomWord();
