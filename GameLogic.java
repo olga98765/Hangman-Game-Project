@@ -20,10 +20,8 @@ public class GameLogic {
 
     public void play() {
 
-        System.out.println("słowo do odgadnięcia: " + word);
-
         while (trials > 0 && guessedWord.indexOf("_") != -1) {
-            System.out.println("Słowo:" + guessedWord + "\n");
+            System.out.println("\nSłowo:" + guessedWord + "\n");
             System.out.println("Podaj literę:");
             try {
                 char letter = InputHelper.readLine().charAt(0);
@@ -41,7 +39,7 @@ public class GameLogic {
 
                     System.out.println("\nNie ma takiej litery w słowie\n");
                     trials--;
-                    System.out.println("Pozostałe próby " + trials + "\n");
+                    System.out.println("Pozostałe próby: " + trials + "\n");
 
                 }
 
@@ -51,12 +49,12 @@ public class GameLogic {
             }
         }
         if (trials > 0 && guessedWord.indexOf("_") == -1) {
-            System.out.println("gra wygrana");
+            System.out.println("\nGRATULUJE, WYGRAŁEŚ! Słowo: " + word);
             stats.incrementGamesWon();
 
 
         } else {
-            System.out.println("gra przegrana");
+            System.out.println("Niestety przegrałeś. Słowo: " + word);
             stats.incrementGamesLost();
         }
 
