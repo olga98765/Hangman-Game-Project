@@ -31,24 +31,18 @@ for (int i =0; i< word.length(); i++) {
     if (word.charAt(i) == letter) {
 guessedWord.setCharAt(i, letter);
 
+
     }
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
 
         }
 
+    }     else {
+        System.out.println("nie ma takiej litery w słowie");
+        trials--;
+        System.out.println("Pozostałe próby " + trials);
+
+        
+        
+            }
     }
-    }
-        }
+}}
