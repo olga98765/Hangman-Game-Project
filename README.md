@@ -5,6 +5,7 @@
 2. [Funkcjonalności](#funkcjonalności)
 3. [Instrukcja obsługi](#instrukcja-obługi)
 4. [Wymagania systemowe](#wymagania-systemowe)
+5. [Screenshot](#screenshot)
 
 ## Opis projektu
 Projekt "Gra w Wisielca" to konsolowa implementacja popularnej gry słownej w Javie. Gracze mają za zadanie odgadnąć ukryte słowo, podając litery. Gra pozwala na zarządzanie słowami w bazie danych oraz na śledzenie statystyk gier.
@@ -36,3 +37,6 @@ Gra wymaga zainstalowanego JDK (Java Development Kit), które można pobrać z o
 
 ## Wymagania systemowe
 - Java 11 lub nowsza
+
+## Screenshot
+![Screenshot z gry](images/game-screen.png)
