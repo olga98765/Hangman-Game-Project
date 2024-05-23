@@ -9,9 +9,8 @@ public class GameLogic {
 
         this.word = word;
         this.selectedDifficulty = selectedDifficulty;
-        this.trials = Difficulty.availableTrials(selectedDifficulty);
+        this.trials = Difficulty.availableTrials(word, selectedDifficulty);
         this.guessedWord = new StringBuilder(("_").repeat(word.length()));
-
 
     }
 
@@ -20,29 +19,46 @@ public class GameLogic {
         System.out.println("poziom trudności " + selectedDifficulty);
         System.out.println("słowo do odgadnięcia: " + word);
 
-        while (trials > 0) {
+        while (trials > 0 && guessedWord.indexOf("_") != -1) {
             System.out.println("Słowo:" + guessedWord);
             System.out.println("Podaj literę:");
-
+            try {
             char letter = InputHelper.readLine().charAt(0);
 
-if (word.contains(String.valueOf(letter))) {
-for (int i =0; i< word.length(); i++) {
-    if (word.charAt(i) == letter) {
-guessedWord.setCharAt(i, letter);
+            if (word.contains(String.valueOf(letter))) {
+                for (int i = 0; i < word.length(); i++) {
+                    if (word.charAt(i) == letter) {
+                        guessedWord.setCharAt(i, letter);
 
+                    }
 
-    }
+                }
 
-        }
+            } else {
+                System.out.println("nie ma takiej litery w słowie");
+                trials--;
+                System.out.println("Pozostałe próby " + trials);
 
-    }     else {
-        System.out.println("nie ma takiej litery w słowie");
-        trials--;
-        System.out.println("Pozostałe próby " + trials);
-
-        
-        
             }
-    }
-}}
+        
+
+    } catch (StringIndexOutOfBoundsException e) {
+        System.out.println("Wpisz jedną literę");
+    } }
+if (trials > 0  && guessedWord.indexOf("_") == -1){
+    System.out.println("gra wygrana");
+
+} else {
+    System.out.println("gra przegrana");
+}
+
+
+
+        }}
+
+
+
+
+
+
+    

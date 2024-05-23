@@ -1,16 +1,16 @@
 public class Difficulty {
 
-    public static int availableTrials(String selectedDifficulty) {
+    public static int availableTrials(String word, String selectedDifficulty) {
 
         switch (selectedDifficulty) {
             case "1":
-                return 10;
+                return word.length() + 10;
             case "2":
-                return 5;
+                return word.length() + 8;
             case "3":
-                return 1;
+                return word.length() + 5;
             default:
-                return 5;
+                return  word.length() + 8;
         }
 
     }
