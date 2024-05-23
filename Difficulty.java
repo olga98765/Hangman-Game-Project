@@ -10,7 +10,9 @@ public class Difficulty {
             case "3":
                 return word.length();
             default:
+            System.out.println("Domyślnie ustawiono poziom średni");
                 return  word.length() + 5;
+
         }
 
     }

@@ -27,19 +27,18 @@ public class Options {
         System.out.println("Wpisz słowo do usunięcia");
         String wordToRemove = InputHelper.readLine();
 
-        if(wordDatabase.containsWord(wordToRemove)) {
-            
+        if (wordDatabase.containsWord(wordToRemove)) {
+
             wordDatabase.removeWord(wordToRemove);
-        System.out.println("Słowo zostało usunięte");
+            System.out.println("Słowo zostało usunięte");
         } else {
             System.out.println("Nie ma takiego słowa w grze");
         }
 
-
     }
 
     public static void editWordByNumber() {
-        System.out.println("Podaj numer słowa do edycji");
+       try{ System.out.println("Podaj numer słowa do edycji");
         List<String> words = wordDatabase.getWords();
 
         int number = Integer.parseInt(InputHelper.readLine());
@@ -49,9 +48,12 @@ public class Options {
             String newWord = InputHelper.readLine();
             wordDatabase.setWord(number, newWord);
             System.out.print("Słowo zostało zmienione.");
-
+        } else {
+            System.out.println("Nieprawidłowy numer słowa");
         }
-
+    } catch (NumberFormatException e) {
+        System.out.println("Wpisz poprawny numer");
+    }
     }
 
     public static void showStatistics() {

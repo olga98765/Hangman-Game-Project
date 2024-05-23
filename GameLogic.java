@@ -20,11 +20,10 @@ public class GameLogic {
 
     public void play() {
 
-        System.out.println("poziom trudności " + selectedDifficulty);
         System.out.println("słowo do odgadnięcia: " + word);
 
         while (trials > 0 && guessedWord.indexOf("_") != -1) {
-            System.out.println("Słowo:" + guessedWord);
+            System.out.println("Słowo:" + guessedWord + "\n");
             System.out.println("Podaj literę:");
             try {
                 char letter = InputHelper.readLine().charAt(0);
@@ -38,9 +37,11 @@ public class GameLogic {
                     }
 
                 } else {
-                    System.out.println("nie ma takiej litery w słowie");
+                    System.out.println("- - - - - - - - - -");
+
+                    System.out.println("\nNie ma takiej litery w słowie\n");
                     trials--;
-                    System.out.println("Pozostałe próby " + trials);
+                    System.out.println("Pozostałe próby " + trials + "\n");
 
                 }
 
