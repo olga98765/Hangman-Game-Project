@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class WordDatabase {
 
-    List<String> words;
-    Random random;
+    private List<String> words;
+    private Random random;
 
     public WordDatabase() {
         this.random = new Random();

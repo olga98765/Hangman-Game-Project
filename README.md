@@ -38,5 +38,5 @@ Gra wymaga zainstalowanego JDK (Java Development Kit), które można pobrać z o
 ## Wymagania systemowe
 - Java 11 lub nowsza
 
-### Screenshot
+## Screenshot
 ![Screenshot z gry](images/game-screen.png)
