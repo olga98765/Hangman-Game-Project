@@ -9,7 +9,7 @@ public class Menu {
         
 
             System.out.println(
-                    "\nWybierz opcję\n\n1. Graj\n2. Dodaj słowo\n3. Usuń słowo\n4. Edytuj słowo\n5. Pokaż statystyki\n6. Pokaż słowa w grze\n7. Wyjdź\n");
+                    "\nWybierz opcję:\n\n1. Graj\n2. Dodaj słowo\n3. Usuń słowo\n4. Edytuj słowo\n5. Pokaż statystyki\n6. Pokaż słowa w grze\n7. Wyjdź\n");
 
             String option = InputHelper.readLine();
 

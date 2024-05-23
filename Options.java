@@ -26,8 +26,16 @@ public class Options {
     public static void removeWord() {
         System.out.println("Wpisz słowo do usunięcia");
         String wordToRemove = InputHelper.readLine();
-        wordDatabase.removeWord(wordToRemove);
+
+        if(wordDatabase.containsWord(wordToRemove)) {
+            
+            wordDatabase.removeWord(wordToRemove);
         System.out.println("Słowo zostało usunięte");
+        } else {
+            System.out.println("Nie ma takiego słowa w grze");
+        }
+
+
     }
 
     public static void editWordByNumber() {
@@ -48,10 +56,10 @@ public class Options {
 
     public static void showStatistics() {
         System.out.println("\nStatystyki:");
-        System.out.println("\nGry wygrane:" + stats.getGamesWon());
-        System.out.println("Gry przegrane:" + stats.getGamesLost());
+        System.out.println("\nGry wygrane: " + stats.getGamesWon());
+        System.out.println("Gry przegrane: " + stats.getGamesLost());
         double ratio = stats.getWinLossRatio();
-        System.out.println("Średnia zwycięstw:" + (ratio == 0 ? "0 % " : ratio + "%"));
+        System.out.println("Średnia zwycięstw: " + (ratio == 0 ? "0 % " : ratio + "%"));
     }
 
     public static void showWordDatabase() {

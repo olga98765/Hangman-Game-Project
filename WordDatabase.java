@@ -38,4 +38,8 @@ public class WordDatabase {
         return new ArrayList<>(words);
     }
 
+    public boolean containsWord(String word) {
+        return words.contains(word);
+    }
+
 }
