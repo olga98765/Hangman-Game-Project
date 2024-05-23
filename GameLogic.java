@@ -10,27 +10,34 @@ public class GameLogic {
         this.word = word;
         this.selectedDifficulty = selectedDifficulty;
         this.trials = Difficulty.availableTrials(selectedDifficulty);
-        this.guessedWord = new StringBuilder(("_" + " ").repeat(word.length()));
+        this.guessedWord = new StringBuilder(("_").repeat(word.length()));
 
 
     }
 
     public void play() {
 
-        System.out.println("poziom" + selectedDifficulty);
-        System.out.println(word);
+        System.out.println("poziom trudności " + selectedDifficulty);
+        System.out.println("słowo do odgadnięcia: " + word);
 
-        if (trials > 0) {
-            System.out.println("Słowo:");
-            System.out.println(guessedWord);
+        while (trials > 0) {
+            System.out.println("Słowo:" + guessedWord);
             System.out.println("Podaj literę:");
 
-            String letter = InputHelper.readLine();
+            char letter = InputHelper.readLine().charAt(0);
 
-if (word.contains(letter)) {
-    System.out.println("zawiera " + letter);
-} else {
-    System.out.println("nie zawiera " + letter);
+if (word.contains(String.valueOf(letter))) {
+for (int i =0; i< word.length(); i++) {
+    if (word.charAt(i) == letter) {
+guessedWord.setCharAt(i, letter);
+
+    }
+
+
+
+
+
+
 }
 
 
@@ -43,5 +50,5 @@ if (word.contains(letter)) {
         }
 
     }
-
-}
+    }
+        }
