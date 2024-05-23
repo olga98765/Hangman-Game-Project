@@ -11,7 +11,7 @@ public class WordDatabase {
         this.random = new Random();
         this.words = new ArrayList<>(List.of(
                 "oxygen", "zipcode", "yacht", "barbecue", "waterfall", "drone",
-                "microwave", "caterpillar", "tiramisu", "ul", "jackpot", "umbrella", "pixel"));
+                "microwave", "caterpillar", "tiramisu", "jackpot", "umbrella", "pixel"));
     }
 
     public String getRandomWord() {

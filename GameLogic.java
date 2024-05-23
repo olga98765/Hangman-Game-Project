@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class GameLogic {
 
     String word;
@@ -33,7 +35,6 @@ public class GameLogic {
                             guessedWord.setCharAt(i, letter);
 
                         }
-
                     }
 
                 } else {
@@ -45,6 +46,7 @@ public class GameLogic {
 
             } catch (StringIndexOutOfBoundsException e) {
                 System.out.println("Wpisz jedną literę");
+               
             }
         }
         if (trials > 0 && guessedWord.indexOf("_") == -1) {

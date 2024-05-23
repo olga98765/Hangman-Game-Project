@@ -7,12 +7,11 @@ public class Options {
 
     public static void playGame() {
 
-        
-        System.out.println("Wybierz poziom trudności (1. łatwy, 2. średni, 3. trudny):");
+        System.out.println("\nWybierz poziom trudności (1. łatwy, 2. średni, 3. trudny):");
         String selectedDifficulty = InputHelper.readLine();
         String wordInGame = wordDatabase.getRandomWord();
 
-        GameLogic game = new GameLogic(wordInGame, selectedDifficulty,stats);
+        GameLogic game = new GameLogic(wordInGame, selectedDifficulty, stats);
         game.play();
 
     }
