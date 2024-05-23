@@ -1,3 +1,5 @@
+package Ui;
+import Utils.InputHelper;
 
 public class Menu {
 

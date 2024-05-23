@@ -1,4 +1,6 @@
-import java.io.IOException;
+package Core;
+import Stats.Statistics;
+import Utils.InputHelper;
 
 public class GameLogic {
 
@@ -21,10 +23,13 @@ public class GameLogic {
     public void play() {
 
         while (trials > 0 && guessedWord.indexOf("_") != -1) {
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+
             System.out.println("\nSłowo:" + guessedWord + "\n");
             System.out.println("Podaj literę:");
-            try {
+         
                 char letter = InputHelper.readLine().charAt(0);
+                
 
                 if (word.contains(String.valueOf(letter))) {
                     for (int i = 0; i < word.length(); i++) {
@@ -35,18 +40,15 @@ public class GameLogic {
                     }
 
                 } else {
-                    System.out.println("- - - - - - - - - -");
 
                     System.out.println("\nNie ma takiej litery w słowie\n");
                     trials--;
-                    System.out.println("Pozostałe próby: " + trials + "\n");
+                    System.out.println("Pozostałe próby: " + trials);
 
                 }
 
-            } catch (StringIndexOutOfBoundsException e) {
-                System.out.println("Wpisz jedną literę");
-               
-            }
+
+           
         }
         if (trials > 0 && guessedWord.indexOf("_") == -1) {
             System.out.println("\nGRATULUJE, WYGRAŁEŚ! Słowo: " + word);

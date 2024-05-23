@@ -1,3 +1,4 @@
+package Core;
 public class Difficulty {
 
     public static int availableTrials(String word, String selectedDifficulty) {

@@ -1,3 +1,4 @@
+package Stats;
 public class Statistics {
     private int gamesWon = 0;
     private int gamesLost = 0;

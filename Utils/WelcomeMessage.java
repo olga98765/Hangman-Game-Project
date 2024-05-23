@@ -1,3 +1,4 @@
+package Utils;
 public class WelcomeMessage {
 
 public static void printWelcomeMessage() {
