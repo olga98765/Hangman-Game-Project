@@ -24,13 +24,18 @@ public class GameLogic {
     public void play() {
 
         while (trials > 0 && guessedWord.indexOf("_") != -1) {
+            try {
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 
             System.out.println("\nSłowo:" + guessedWord + "\n");
             System.out.println("Podaj literę:");
 
-            char letter = InputHelper.readLine().charAt(0);
+            String input = InputHelper.readLine();
+                if (input == null || input.isEmpty() || !input.matches("[a-zA-Z]")) {
+                    throw new IllegalArgumentException("Wpisz poprawną literę.");
+                } 
 
+                char letter = input.charAt(0);
             if (word.contains(String.valueOf(letter))) {
                 for (int i = 0; i < word.length(); i++) {
                     if (word.charAt(i) == letter) {
@@ -47,7 +52,21 @@ public class GameLogic {
 
             }
 
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Wystąpił błąd podczas gry");
         }
+    }
+
+
+
+
+
+
+
+
+
         if (trials > 0 && guessedWord.indexOf("_") == -1) {
             System.out.println("\nGRATULUJE, WYGRAŁEŚ! Słowo: " + word);
             stats.incrementGamesWon();
@@ -56,6 +75,8 @@ public class GameLogic {
             System.out.println("Niestety przegrałeś. Słowo: " + word);
             stats.incrementGamesLost();
         }
+
+     
 
     }
 }
