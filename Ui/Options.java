@@ -45,22 +45,23 @@ public class Options {
     }
 
     public static void editWordByNumber() {
-       try{ System.out.println("Podaj numer słowa do edycji");
-        List<String> words = wordDatabase.getWords();
+        try {
+            System.out.println("Podaj numer słowa do edycji");
+            List<String> words = wordDatabase.getWords();
 
-        int number = Integer.parseInt(InputHelper.readLine());
+            int number = Integer.parseInt(InputHelper.readLine().trim());
 
-        if (number >= 0 && number < words.size()) {
-            System.out.print("Wpisz nowe słowo: ");
-            String newWord = InputHelper.readLine();
-            wordDatabase.setWord(number, newWord);
-            System.out.print("Słowo zostało zmienione.");
-        } else {
-            System.out.println("Nieprawidłowy numer słowa");
+            if (number >= 0 && number < words.size()) {
+                System.out.print("Wpisz nowe słowo: ");
+                String newWord = InputHelper.readLine();
+                wordDatabase.setWord(number, newWord);
+                System.out.print("Słowo zostało zmienione.");
+            } else {
+                System.out.println("Numer w zakresie 1-" + words.size()) ;
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Wpisz poprawny numer");
         }
-    } catch (NumberFormatException e) {
-        System.out.println("Wpisz poprawny numer");
-    }
     }
 
     public static void showStatistics() {
