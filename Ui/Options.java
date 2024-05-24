@@ -24,10 +24,19 @@ public class Options {
     }
 
     public static void addWord() {
-        System.out.println("Wpisz słowo do dodania");
-        String newWord = InputHelper.readLine();
-        wordDatabase.addWord(newWord);
-        System.out.println("Słowo zostało dodane");
+        try {
+            System.out.println("Wpisz słowo do dodania");
+            String newWord = InputHelper.readLine();
+    
+            if (!newWord.matches("[a-zA-Z]+")|| newWord == null) {
+                throw new IllegalArgumentException("Słowo musi składać się z liter.");
+            }
+    
+            wordDatabase.addWord(newWord);
+            System.out.println("Słowo zostało dodane");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void removeWord() {
@@ -48,20 +57,25 @@ public class Options {
         try {
             System.out.println("Podaj numer słowa do edycji");
             List<String> words = wordDatabase.getWords();
-
+    
             int number = Integer.parseInt(InputHelper.readLine().trim());
-
+    
             if (number >= 0 && number < words.size()) {
-                System.out.print("Wpisz nowe słowo: ");
+                System.out.print("\nWpisz nowe słowo: ");
                 String newWord = InputHelper.readLine();
+
+                    if (!newWord.matches("[a-zA-Z]+") || newWord == null) {
+                    throw new IllegalArgumentException("\nSłowo musi zawierać litery.");
+                }
+    
                 wordDatabase.setWord(number, newWord);
-                System.out.print("Słowo zostało zmienione.");
+                System.out.print("Słowo zostało zmienione.\n");
             } else {
-                System.out.println("Numer w zakresie 1-" + words.size()) ;
+                System.out.println("Numer w zakresie 1-" + words.size());
             }
         } catch (NumberFormatException e) {
             System.out.println("Wpisz poprawny numer");
-        }
+        } 
     }
 
     public static void showStatistics() {
