@@ -1,4 +1,5 @@
 package Core;
+
 public class Difficulty {
 
     public static int availableTrials(String word, String selectedDifficulty) {
@@ -11,8 +12,8 @@ public class Difficulty {
             case "3":
                 return word.length();
             default:
-            System.out.println("Domyślnie ustawiono poziom średni");
-                return  word.length() + 5;
+                System.out.println("Domyślnie ustawiono poziom średni");
+                return word.length() + 5;
 
         }
 

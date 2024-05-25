@@ -10,8 +10,7 @@ public class Hangman {
         Menu menu = new Menu();
         menu.displayMenu();
 
-InputHelper.close();
-
+        InputHelper.close();
 
     }
 }
