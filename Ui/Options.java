@@ -13,7 +13,7 @@ public class Options {
     private static WordDatabase wordDatabase = new WordDatabase();
 
     public static void playGame() {
-        
+        try {
             System.out.println("\nWybierz poziom trudności (1. łatwy, 2. średni, 3. trudny):");
             String selectedDifficulty = InputHelper.readLine();
             String wordInGame = wordDatabase.getRandomWord();
@@ -21,7 +21,10 @@ public class Options {
             GameLogic game = new GameLogic(wordInGame, selectedDifficulty, stats);
             game.play();
 
-          
+        } catch (Exception e) {
+            System.err.println("Wystąpił błąd podczas uruchamiania gry");
+
+        }
           
         } 
 
@@ -38,8 +41,8 @@ public class Options {
 
             wordDatabase.addWord(newWord);
             System.out.println("Słowo zostało dodane");
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+    
+ 
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas dodawania słowa");
         }
@@ -60,8 +63,8 @@ public class Options {
             if (!wordToRemove.matches("[a-zA-Z]+") || wordToRemove == null) {
                 throw new IllegalArgumentException("\nSłowo musi zawierać litery.");
             }
-        } catch (IllegalArgumentException e) {
-            System.out.println("Wpisz poprawny numer");
+  
+    
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas usuwania słowa");
         }
@@ -88,8 +91,7 @@ public class Options {
             } else {
                 System.out.println("Numer w zakresie 1-" + words.size());
             }
-        } catch (IllegalArgumentException e) {
-            System.out.println("Wpisz poprawny numer");
+   
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas edytowania słowa");
         }
