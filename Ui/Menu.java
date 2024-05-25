@@ -40,7 +40,7 @@ public class Menu {
                     Options.showWordDatabase();
                     break;
                 case "7":
-                    System.out.println("7");
+                    System.out.println("Dzięki za grę!\n");
 
                     running = false;
                     break;
