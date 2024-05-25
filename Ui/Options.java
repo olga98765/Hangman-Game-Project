@@ -25,10 +25,8 @@ public class Options {
             System.err.println("Wystąpił błąd podczas uruchamiania gry");
 
         }
-          
-        } 
 
-    
+    }
 
     public static void addWord() {
         try {
@@ -41,8 +39,7 @@ public class Options {
 
             wordDatabase.addWord(newWord);
             System.out.println("Słowo zostało dodane");
-    
- 
+
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas dodawania słowa");
         }
@@ -61,10 +58,9 @@ public class Options {
                 System.out.println("Nie ma takiego słowa w grze");
             }
             if (!wordToRemove.matches("[a-zA-Z]+") || wordToRemove == null) {
-                throw new IllegalArgumentException("\nSłowo musi zawierać litery.");
+                throw new IllegalArgumentException("\nWpisz poprawnie słowo do usunięcia.");
             }
-  
-    
+
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas usuwania słowa");
         }
@@ -83,7 +79,7 @@ public class Options {
                 String newWord = InputHelper.readLine();
 
                 if (!newWord.matches("[a-zA-Z]+") || newWord == null) {
-                    throw new IllegalArgumentException("\nSłowo musi zawierać litery.");
+                    throw new IllegalArgumentException("\nWpisz poprawnie nowe słowo.");
                 }
 
                 wordDatabase.setWord(number, newWord);
@@ -91,7 +87,7 @@ public class Options {
             } else {
                 System.out.println("Numer w zakresie 1-" + words.size());
             }
-   
+
         } catch (Exception e) {
             System.err.println("Wystąpił błąd podczas edytowania słowa");
         }
