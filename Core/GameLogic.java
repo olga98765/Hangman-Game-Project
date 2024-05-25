@@ -31,7 +31,7 @@ public class GameLogic {
                 System.out.println("Podaj literę:");
 
                 String input = InputHelper.readLine();
-                if (input == null || input.isEmpty() || !input.matches("[a-zA-Z]")) {
+                if (input.isEmpty() || !input.matches("[a-zA-Z]")) {
                     throw new IllegalArgumentException("Wpisz poprawną literę.");
                 }
 
@@ -52,8 +52,6 @@ public class GameLogic {
 
                 }
 
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.err.println("Wystąpił błąd podczas gry");
             }

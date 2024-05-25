@@ -25,7 +25,6 @@ public class Options {
             System.err.println("Wystąpił błąd podczas uruchamiania gry");
 
         }
-
     }
 
     public static void addWord() {
